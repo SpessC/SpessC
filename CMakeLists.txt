@@ -9,10 +9,21 @@ file(GLOB_RECURSE SRC_FILES
 	"engine/source/*/*.c"
 )
 
+add_executable(SpessC ${SRC_FILES})
+
+
 include_directories(engine/includes)
+
+include_directories(raylib)
+link_directories(raylib)
+
+find_library(raylib raylib "raylib/")
+
+target_link_libraries(SpessC ${raylib})
+target_link_libraries(SpessC m dl pthread)
+
 
 set(CMAKE_C_FLAGS "-g -rdynamic -fsanitize=address")
 
 set(CMAKE_C_FLAGS "-Werror -Wall -Wextra -pedantic -Wwrite-strings")
 
-add_executable(SpessC ${SRC_FILES})
