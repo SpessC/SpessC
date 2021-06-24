@@ -9,4 +9,10 @@ file(GLOB_RECURSE SRC_FILES
 	"engine/source/*/*.c"
 )
 
+include_directories(engine/includes)
+
+set(CMAKE_C_FLAGS "-g -rdynamic -fsanitize=address")
+
+set(CMAKE_C_FLAGS "-Werror -Wall -Wextra -pedantic -Wwrite-strings")
+
 add_executable(SpessC ${SRC_FILES})
