@@ -1,5 +1,7 @@
 #include "engine.h"
 
+#define GRACK (Color){ 77, 77, 77, 255 }
+
 int main(int argc, char* argv[]) {
 	UNUSED(argc);
 	UNUSED(argv);
@@ -9,16 +11,16 @@ int main(int argc, char* argv[]) {
 	int running = 1;
 	SetTargetFPS(60);
 
+	Texture2D logo = LoadTexture("engine/art/templogo.png");
+	
 	while (running) {
 		if (WindowShouldClose()) {
 			running = 0;
 		}
-
 		BeginDrawing();
-
-        ClearBackground(RAYWHITE);
-
-        EndDrawing();
+		ClearBackground(GRACK);
+		DrawTexture(logo, 400 - logo.width/2, 300 - logo.height/2, WHITE);
+		EndDrawing();
 
 	}
 	CloseWindow();
