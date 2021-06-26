@@ -1,7 +1,7 @@
 #include "engine.h"
 
 int initRender() {
-	InitWindow(800, 600, "Test!");
-	
+	InitWindow(window_data.width, window_data.height, "Test!");
+
 	return 0;
 }

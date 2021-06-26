@@ -4,6 +4,11 @@ int main(int argc, char* argv[]) {
 	UNUSED(argc);
 	UNUSED(argv);
 
+	if (loadConfig() == -1) {
+		TraceLog(LOG_ERROR, "Failed to load configuration files!");
+		return -1;
+	}
+
 	initRender();
 
 	int running = 1;
