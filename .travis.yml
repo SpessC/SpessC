@@ -2,7 +2,7 @@ language: c
 os: linux
 
 before_script:
-  - cmake ../SpessC
+  - cmake .
 
 script:
-  - make
+  - make clean
