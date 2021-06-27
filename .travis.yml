@@ -1,0 +1,8 @@
+language: c
+dist: trusty
+
+before_script:
+  - cmake ../SpessC
+
+script:
+  - make
