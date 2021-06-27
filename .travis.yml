@@ -1,5 +1,5 @@
 language: c
-dist: trusty
+os: linux
 
 before_script:
   - cmake ../SpessC
